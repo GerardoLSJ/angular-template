@@ -25,7 +25,14 @@ var app = angular.module('fedex', ['ui.bootstrap','ui.router','ngAnimate'])
             })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
-})
+}).run(function($rootScope) {
+    /**change the body class acording to the state / route  */
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+      $rootScope.containerClass = toState.containerClass;
+      $rootScope.slideHeader = false;
+      //console.log($rootScope.containerClass)
+    });
+  })
 
 
 app.run(['$rootScope', '$document', function ($rootScope, $document) {
