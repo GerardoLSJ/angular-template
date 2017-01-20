@@ -26,3 +26,11 @@ var app = angular.module('fedex', ['ui.bootstrap','ui.router','ngAnimate'])
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 })
+
+
+app.run(['$rootScope', '$document', function ($rootScope, $document) {
+    $document.on('visibilitychange', function () {
+        $rootScope.$broadcast('visibilityChange', document.hidden, document.visibilityState);
+    });
+}]);
+
