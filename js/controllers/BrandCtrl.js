@@ -8,7 +8,16 @@ app
 
         }
 
-        $scope.brands = [{
+
+
+        if($localstorage.get('my_brands',false)){
+            console.log('Brands in local')
+                $scope.brands = $localstorage.getObject('my_brands');
+        }else{
+            $localstorage.setObject('my_brands', $scope.brands);
+            console.log('setting up brands')
+
+                    $scope.brands = [{
             id: 1,
             'logo': 'http://local.fedex.com/images/logos/fedex.png',
             'company': "Mis Clientes1",
@@ -49,12 +58,6 @@ app
             'rfc': "AR885D415",
             'telephone': "55-32-51-52"
         }]
-
-        if($localstorage.get('my_brands',false)){
-            console.log('Brands in local')
-        }else{
-            $localstorage.setObject('my_brands', $scope.brands);
-            console.log('setting up brands')
         }
 
     })
