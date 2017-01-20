@@ -11,9 +11,9 @@ app
         }
         $window.onblur = function() {
             console.log('>onblur');
-            $scope.focus = false;
+           /* $scope.focus = false;
             console.warn($scope.focus)
-            $scope.$apply()
+            $scope.$apply()*/
         };
 
 

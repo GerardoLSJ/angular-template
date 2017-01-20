@@ -1,26 +1,21 @@
-
-
 body {
     /*background: url(http://lorempixel.com/1920/1920/city/9/) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     */
-
 }
 
-
-body.showBody{
-background: url(http://about.van.fedex.com/wp-content/uploads/2016/01/DSC_7034.jpg) no-repeat center center fixed;
-background-size: cover;
-background-color: #444;
-}
-body.hideBody{
-
-background-color: #222;
-display: none;
+body.showBody {
+    background: url(http://about.van.fedex.com/wp-content/uploads/2016/01/DSC_7034.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-color: #444;
 }
 
+body.hideBody {
+    background-color: #222;
+    display: none;
+}
 
 .panel-default {
     opacity: 0.9;
@@ -38,12 +33,14 @@ display: none;
     /*display: none;*/
 }
 
-
 @media print {
-    html, body {
-       display: none;  /* hide whole page */
+    html,
+    body {
+        display: none;
+        /* hide whole page */
     }
 }
+
 
 /* Have to set height explicity on ui-view 
 to prevent collapsing during animation*/
@@ -76,7 +73,47 @@ to prevent collapsing during animation*/
 
 [ui-view].ng-leave-active {
     opacity: 0;
-    
     /*transform: translate(50px,100px);*/
     /*transform: translate3d(50px, 100px, 0);*/
+}
+
+
+/* cards */
+
+.cards-row {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.thumbnail {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12)
+}
+
+.thumbnail>img {
+    width: 100%;
+    display: block
+}
+
+.thumbnail h3 {
+    font-size: 26px
+}
+
+.thumbnail h3,
+.card-description {
+    margin: 0;
+    padding: 8px 0 0 0;
+    border-bottom: solid 1px #eee;
+    text-align: justify
+}
+
+.thumbnail p {
+    margin: 10px 0 10px;
+}
+
+.thumbnail .btn {
+
+
 }
