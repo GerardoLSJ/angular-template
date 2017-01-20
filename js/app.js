@@ -4,13 +4,6 @@ var app = angular.module('fedex', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider) {
     //console.log('state provider')
     $stateProvider
-        .state('app', {
-            url: '/app',
-            containerClass: 'menu',
-            abstract: true,
-            templateUrl: 'views/menu.html',
-            controller: 'AppCtrl'
-        })
         .state('login', {
             url: '/login',
             containerClass: 'login',
