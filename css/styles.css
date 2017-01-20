@@ -10,16 +10,19 @@ body.hideBody {
 }
 
 body.login{
+    
     background: url(http://about.van.fedex.com/wp-content/uploads/2016/01/DSC_7034.jpg) no-repeat center center fixed;
     background-size: cover;
-    background-color: #444;
+    background-color: rgba(238, 238, 238, 0.29);
 }
 body.brand{
-    background: url(http://about.van.fedex.com/wp-content/uploads/2016/01/DSC_7034.jpg) no-repeat center center fixed;
-    background-size: cover;
-    background-color: #444;
+    background-color: rgba(238, 238, 238, 0.29);
 }
-
+/*
+body{
+    background-color: rgba(238, 238, 238, 0.29);
+}
+*/
 
 .panel-default {
     opacity: 0.9;

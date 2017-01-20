@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Fedex Demo</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="css/styles.css" rel="stylesheet">
+
     <!-- your app's js -->
 
     <script src="node_modules/angular/angular.min.js"></script>
@@ -19,12 +19,16 @@
     <script src="js/controllers/AppCtrl.js"></script>
     <script src="js/controllers/LoginCtrl.js"></script>
     <script src="js/controllers/BrandCtrl.js"></script>
+    <script src="js/controllers/EditCtrl.js"></script>
+
+
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body ng-app="fedex" ng-controller="AppCtrl"  ng-class="{{containerClass}}" ng-class="focus ? 'showBody' : 'hideBody'">
+<body ng-app="fedex" ng-controller="AppCtrl" class="{{containerClass}}" ng-class="focus ? 'showBody' : 'hideBody'">
 
-<!--navbar-->
-        <nav class="navbar navbar-inverse">
+    <!--navbar-->
+    <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!--navbrand-->
             <div class="navbar-header">
@@ -48,19 +52,19 @@
                             <span class="glyphicon " aria-hidden="true"></span>&nbsp; Cobertura
                         </a>
                     </li>
-                                        <li>
+                    <li>
                         <a href="{% url 'music:index' %}">
                             <span class="glyphicon " aria-hidden="true"></span>&nbsp; Nuestara gente
                         </a>
                     </li>
-                                        <li>
+                    <li>
                         <a href="{% url 'music:index' %}">
                             <span class="glyphicon " aria-hidden="true"></span>&nbsp; Nuestras Unidades
                         </a>
                     </li>
-                    
+
                 </ul>
-               
+
                 <!--right items-->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="">
@@ -68,11 +72,11 @@
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Action
                         </a>
                     </li>
-                    <li  class="active">
+                    <li class="active">
                         <a href="#">
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
                         </a>
-                    </li>1
+                    </li>
                 </ul>
             </div>
             <!--end items-->
