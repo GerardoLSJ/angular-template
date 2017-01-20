@@ -48,7 +48,7 @@ to prevent collapsing during animation*/
 
 [ui-view].ng-enter-active {
     opacity: 1;
-    transition: all ease;
+    transition: all 0.5 ease;
 }
 
 [ui-view].ng-leave {
@@ -58,6 +58,7 @@ to prevent collapsing during animation*/
 
 [ui-view].ng-leave-active {
     opacity: 0;
+    
     /*transform: translate(50px,100px);*/
-    transform: translate3d(50px, 100px, 0);
+    /*transform: translate3d(50px, 100px, 0);*/
 }
