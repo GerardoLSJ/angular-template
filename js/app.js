@@ -16,21 +16,17 @@ var app = angular.module('fedex', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
             templateUrl: 'views/brand.html',
             controller: 'BrandCtrl'
         })
-        /*
-        .state('brand.home', {
-            url: '/brand',
-            containerClass: 'brand',
-            templateUrl: 'views/brand.html',
-            controller: 'BrandCtrl'
-        })
-        */
         .state('edit', {
             url: '/edit/:brandId',
             templateUrl: 'views/brand-edit.html',
             controller: 'EditCtrl'
-   
-
+        })        
+        .state('home', {
+            url: '/home/',
+            templateUrl: 'views/home.html',
+            controller: 'HomeCtrl'
         })
+
 
 
     // if none of the above states are matched, use this as the fallback
