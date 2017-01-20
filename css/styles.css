@@ -16,3 +16,51 @@ opacity: 0.9;
 margin-top:30px;
 }
 .form-group.last { margin-bottom:0px; }
+
+
+
+/* Hide scrollbar */
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+/* Have to set height explicity on ui-view 
+to prevent collapsing during animation*/
+.ui-view-container {
+    display: flex;
+  position: relative;
+  
+}
+
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+      position: absolute;
+  left: 0 !important;
+  right: 0 !important;
+  opacity: 0;
+  
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+    transition:all ease;
+ 
+}
+
+[ui-view].ng-leave {
+  opacity: 1;
+  transition:all .5s ease;
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+   transform: translate(50px,100px);
+  /*transform:translate3d(0, 100px, 0);*/
+}

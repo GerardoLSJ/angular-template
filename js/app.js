@@ -1,4 +1,4 @@
-var app = angular.module('fedex', ['ui.bootstrap','ui.router'])
+var app = angular.module('fedex', ['ui.bootstrap','ui.router','ngAnimate'])
 
 /*routes*/
 .config(function($stateProvider, $urlRouterProvider) {
@@ -17,7 +17,12 @@ var app = angular.module('fedex', ['ui.bootstrap','ui.router'])
             templateUrl: 'views/login.html',
             controller: 'LoginCtrl'  
             })
-
+        .state('brand', {
+            url: '/brand',
+            containerClass: 'brand',
+            templateUrl: 'views/brand.html',
+            controller: 'BrandCtrl'  
+            })
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/login');
 })
