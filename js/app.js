@@ -2,7 +2,7 @@ var app = angular.module('fedex', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
 
 /*routes*/
 .config(function($stateProvider, $urlRouterProvider) {
-    console.log('state provider')
+    //console.log('state provider')
     $stateProvider
         .state('app', {
             url: '/app',

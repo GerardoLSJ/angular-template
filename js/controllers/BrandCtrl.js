@@ -1,5 +1,5 @@
 app
-    .controller('BrandCtrl', function($scope, $state) {
+    .controller('BrandCtrl', function($scope, $state,$localstorage) {
 
         $scope.thisBrand = {};
         $scope.edit = function(brand){
@@ -11,7 +11,7 @@ app
         $scope.brands = [{
             id: 1,
             'logo': 'http://local.fedex.com/images/logos/fedex.png',
-            'company': "Mis Clientes",
+            'company': "Mis Clientes1",
             'contact': "Jesus Gonzalez",
             'country': "Mexico",
             'address': "Pedregal #45",
@@ -21,7 +21,7 @@ app
         }, {
             id: 2,
             'logo': 'https://assets.entrepreneur.com/content/4x3/400/20151228194913-oppfinder-express-employment-4x3.jpeg',
-            'company': "Mis clientes",
+            'company': "Mis clientes2",
             'contact': "Victoria Perez",
             'country': "Mexico",
             'address': "Pedregal #45",
@@ -31,7 +31,7 @@ app
         }, {
             id: 3,
             'logo': 'http://www.dondevive.org/wp-content/uploads/2016/02/castor.jpg',
-            'company': "Mis clientes",
+            'company': "Mis clientes3",
             'contact': "Jesus Gonzalez",
             'country': "Mexico",
             'address': "Pedregal #45",
@@ -41,7 +41,7 @@ app
         }, {
             id: 4,
             'logo': 'https://tctechcrunch2011.files.wordpress.com/2015/11/panda.jpg?w=738',
-            'company': "Mis clientes",
+            'company': "Mis clientes4",
             'contact': "Sr Victor",
             'country': "Mexico",
             'address': "Pedregal #45",
@@ -49,5 +49,12 @@ app
             'rfc': "AR885D415",
             'telephone': "55-32-51-52"
         }]
+
+        if($localstorage.get('my_brands',false)){
+            console.log('Brands in local')
+        }else{
+            $localstorage.setObject('my_brands', $scope.brands);
+            console.log('setting up brands')
+        }
 
     })

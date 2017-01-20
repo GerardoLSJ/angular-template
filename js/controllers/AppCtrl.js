@@ -4,13 +4,13 @@ app
         $scope.focus = true;
 
         $window.onfocus = function() {
-            console.log("focused");
+            //console.log("focused");
             $scope.focus = true;
-            console.warn($scope.focus)
+            //console.warn($scope.focus)
             $scope.$apply()
         }
         $window.onblur = function() {
-            console.log('>onblur');
+            //console.log('>onblur');
            /* $scope.focus = false;
             console.warn($scope.focus)
             $scope.$apply()*/

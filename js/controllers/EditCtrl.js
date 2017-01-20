@@ -1,9 +1,12 @@
 app
-    .controller('EditCtrl', function($scope, $stateParams) {
+    .controller('EditCtrl', function($scope, $stateParams,$localstorage,$window) {
 
 
         /**Singles  */
   var params = $stateParams.brandId;
-console.log(params)
+    $scope.brands = $localstorage.getObject('my_brands');
+    $scope.brand = $scope.brands[params-1 ];
+    console.log($scope.brand)
+//$window.localStorage.clear();
 
     })
