@@ -21,10 +21,15 @@ var app = angular.module('fedex', ['ui.bootstrap', 'ui.router', 'ngAnimate'])
             templateUrl: 'views/brand-edit.html',
             controller: 'EditCtrl'
         })        
-        .state('home', {
-            url: '/home/',
-            templateUrl: 'views/home.html',
-            controller: 'HomeCtrl'
+        .state('app', {
+            url: '/app/:brandId',
+            templateUrl: 'views/app.html',
+            controller: 'MainCtrl'
+        })
+        .state('add-client', {
+            url: '/add-client/',
+            templateUrl: 'views/add-client.html',
+            controller: 'AddClientCtrl'
         })
 
 

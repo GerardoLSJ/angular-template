@@ -1,6 +1,6 @@
 app
     .controller('BrandCtrl', function($scope, $state,$localstorage) {
-
+$scope.$emit('LoggedIn', true)
         $scope.thisBrand = {};
         $scope.edit = function(brand){
              $scope.thisBrand = brand;
