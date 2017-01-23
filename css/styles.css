@@ -31,7 +31,7 @@ body.brand{
 /* Hide scrollbar */
 
 ::-webkit-scrollbar {
-    display: none;
+   /* display: none;*/
 }
 
 @media print {
