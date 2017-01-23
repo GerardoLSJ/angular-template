@@ -119,3 +119,22 @@ to prevent collapsing during animation*/
 
 
 }
+
+
+
+h1{
+   color: #673AB7
+}
+h2{
+   color: #673AB7
+}
+h3{
+     color: rgba(142, 68, 173,1.0)
+    
+}
+strong{
+    color: rgba(211, 84, 0,1.0)
+}
+.control-label.col-sm-2{
+    color:  rgba(211, 84, 0,1.0)
+}
