@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <a  href="#!/brand" class="btn btn-primary" role="button">Atras</a>
+                <a href="#!/brand" class="btn btn-primary" role="button">Atras</a>
                 <h1>{{brand.company}}</h1>
                 <h2>Mapa</h2>
             </div>
@@ -10,22 +10,38 @@
                 <img ng-src="{{brand.logo}}" alt="">
                 <form action="">
                     <label for="sel1">Select list (select one):</label>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select disabled class="form-control" id="sel1">
+                        <option>{{brand.address}}</option>
                     </select>
                     <br>
-                    <label for="sel1">Select list (select one):</label>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+                    <div ng-show="destination"> 
+                    <label for="sel1">Destination</label>
+                    <span disabled class="form-control" id="sel1">
+                        <option>{{destination.name}}</option>
+                    </span>
+                    </div>
                     <br>
+                    <!-- Single button -->
+                    <div class="btn-group" uib-dropdown is-open="status.isopen">
+                        <button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+                            Select one destination <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-click="stopEvent($event)" role="presentation">
+                                <div class="input-group input-group-sm search-control"> 
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Query" ng-model="query"></input>
+                                </div>
+                            </li>
+                             <li ng-click="selectedItem(item)" role="presentation" ng-repeat='item in items | filter:query'> <a href=""> {{item.name}} </a>
+                        </ul>
+                    </div>
+
+
                 </form>
+
             </div>
 
 
