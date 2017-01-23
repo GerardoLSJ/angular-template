@@ -31,7 +31,7 @@ body.brand{
 /* Hide scrollbar */
 
 ::-webkit-scrollbar {
-    /*display: none;*/
+    display: none;
 }
 
 @media print {
@@ -47,29 +47,32 @@ body.brand{
 to prevent collapsing during animation*/
 
 .ui-view-container {
-    display: flex;
+    /*display: flex;*/
     position: relative;
 }
-
+/*
 [ui-view].ng-enter,
 [ui-view].ng-leave {
-    position: absolute;
-    transition: all .5s ease-in-out;
+   position: flex;
+   top: 150px;
+    transition: all 0.5s ease-in-out;
 }
+*/
 
 [ui-view].ng-enter {
-    position: absolute;
+    /*position: absolute;*/
     opacity: 0;
+     transition: all 0.5s ease-in-out;
 }
 
 [ui-view].ng-enter-active {
     opacity: 1;
-    transition: all 0.5 ease;
+    transition: all 1.5 ease;
 }
 
 [ui-view].ng-leave {
-    opacity: 1;
-    transition: all .5s ease;
+   /* opacity: 1;
+    transition: all .5s ease;*/
 }
 
 [ui-view].ng-leave-active {
