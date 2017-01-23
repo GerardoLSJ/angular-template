@@ -14,10 +14,7 @@ $scope.$emit('LoggedIn', true)
             console.log('Brands in local')
                 $scope.brands = $localstorage.getObject('my_brands');
         }else{
-            $localstorage.setObject('my_brands', $scope.brands);
-            console.log('setting up brands')
-
-                    $scope.brands = [{
+        $scope.brands = [{
             id: 1,
             'logo': 'http://local.fedex.com/images/logos/fedex.png',
             'company': "Mis Clientes1",
@@ -58,6 +55,9 @@ $scope.$emit('LoggedIn', true)
             'rfc': "AR885D415",
             'telephone': "55-32-51-52"
         }]
+            $localstorage.setObject('my_brands', $scope.brands);
+            console.log('setting up brands')
         }
+
 
     })
