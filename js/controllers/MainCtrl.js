@@ -30,7 +30,14 @@ app
 
                 }
             }
-
+            /* descativar */
+            if(value_estafeta<42 ){
+                value_estafeta = 0;
+            }
+            if(value_dhl<42){
+                value_dhl = 0;
+            }
+            /* descativar */
 
             $scope.fedex_val = value/1.3;
             $scope.estafeta_val = value_estafeta/1.4;
