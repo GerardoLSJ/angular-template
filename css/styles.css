@@ -143,3 +143,17 @@ strong{
 .control-label.col-sm-2{
     color: rgb(229, 111, 42);
 }
+
+/*progress bar */
+.estafeta-bar .progress-bar{
+    background-color: #b9221b;
+}
+.dhl-bar .progress-bar{
+    background-color: #fdca2e;
+}
+.fedex-bar .progress-bar{
+    background-color: #ff5900;
+    background-color: #472f92;
+}
+
+

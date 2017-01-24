@@ -1,7 +1,32 @@
 app
     .controller('MainCtrl', function($scope, $state, $stateParams, $localstorage, $window) {
-$scope.dynamic = 40;
 
+        $scope.max = 200;
+        $scope.fedex_val = 0;
+        $scope.estafeta_val = 0;
+        $scope.dhl_val = 0;
+        $scope.random = function() {
+            var value = Math.floor((Math.random() * 70) + 30);
+            var value_estafeta = Math.floor((Math.random() * 70) + 30);
+            var value_dhl = Math.floor((Math.random() * 70) + 30);
+            /** Siempre FEDEX va a ser el mayor no matter what */
+            if(value_estafeta > value || value_dhl > value){
+                let aux = value;
+                value = value_estafeta;
+                value_estafeta = aux;
+                if(value < value_dhl){
+                    let aux = value;
+                    value = value_dhl;
+                    value_dhl = aux;
+
+                }
+            }
+
+
+            $scope.fedex_val = value;
+            $scope.estafeta_val = value_estafeta;
+            $scope.dhl_val = value_dhl;
+        };
         /**Singles  */
         var newBrandInfo = {}
         var params = $stateParams.brandId;
