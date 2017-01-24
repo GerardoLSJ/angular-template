@@ -82,6 +82,7 @@ app
         $scope.selectedItem = function(item) {
             console.log(item)
             $scope.destination = item;
+            this.random()
         }
 
 
