@@ -1,6 +1,6 @@
 app
     .controller('MainCtrl', function($scope, $state, $stateParams, $localstorage, $window) {
-
+$scope.dynamic = 40;
 
         /**Singles  */
         var newBrandInfo = {}
