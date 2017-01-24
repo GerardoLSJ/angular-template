@@ -1,20 +1,29 @@
 app
     .controller('MainCtrl', function($scope, $state, $stateParams, $localstorage, $window) {
 
-        $scope.max = 200;
+        $scope.timeDiffer = Math.floor((Math.random() * 70) + 30);
+        $scope.ratesDiffer = Math.floor((Math.random() * 70) + 30);
         $scope.fedex_val = 0;
         $scope.estafeta_val = 0;
         $scope.dhl_val = 0;
+
+        $scope.fedex_val_time = 0;
+        $scope.estafeta_val_time = 0;
+        $scope.dhl_val_time = 0;
+
+        $scope.fedex_val_rate = 0;
+        $scope.estafeta_val_rate = 0;
+        $scope.dhl_val_rate = 0;
         $scope.random = function() {
             var value = Math.floor((Math.random() * 70) + 30);
             var value_estafeta = Math.floor((Math.random() * 70) + 30);
             var value_dhl = Math.floor((Math.random() * 70) + 30);
             /** Siempre FEDEX va a ser el mayor no matter what */
-            if(value_estafeta > value || value_dhl > value){
+            if (value_estafeta > value || value_dhl > value) {
                 let aux = value;
                 value = value_estafeta;
                 value_estafeta = aux;
-                if(value < value_dhl){
+                if (value < value_dhl) {
                     let aux = value;
                     value = value_dhl;
                     value_dhl = aux;
@@ -23,9 +32,17 @@ app
             }
 
 
-            $scope.fedex_val = value;
-            $scope.estafeta_val = value_estafeta;
-            $scope.dhl_val = value_dhl;
+            $scope.fedex_val = value/1.3;
+            $scope.estafeta_val = value_estafeta/1.4;
+            $scope.dhl_val = value_dhl/1.4;
+
+            $scope.fedex_val_time = value;
+            $scope.estafeta_val_time = value_estafeta;
+            $scope.dhl_val_time = value_dhl;
+
+            $scope.fedex_val_rate = value / 1.5;
+            $scope.estafeta_val_rate = value_estafeta / 1.6;
+            $scope.dhl_val_rate = value_dhl / 1.6;
         };
         /**Singles  */
         var newBrandInfo = {}
