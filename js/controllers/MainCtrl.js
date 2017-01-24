@@ -1,6 +1,6 @@
 app
     .controller('MainCtrl', function($scope, $state, $stateParams, $localstorage, $window) {
-
+        $scope.destination = false;
         $scope.timeDiffer = Math.floor((Math.random() * 70) + 30);
         $scope.ratesDiffer = Math.floor((Math.random() * 70) + 30);
         $scope.fedex_val = 0;
@@ -58,7 +58,7 @@ app
         $scope.brand = $scope.brands[params - 1];
         console.log($scope.brand)
 
-        $scope.destinatiom = false;
+
         $scope.items = [{
             'name': 'Item 1'
         }, {
@@ -114,5 +114,53 @@ app
             console.log(ev)
             ev.stopPropagation();
         }
+
+
+
+
+  $scope.openPdf = function() {
+        var docDefinition = {
+    content: [
+      {
+        text: JSON.stringify($scope.destination)
+      },
+      {
+        style: 'demoTable',
+        table: {
+          widths: ['*', '*', '*'],
+          body: [
+            [{text: 'Fruit', style: 'header'}, {text: 'Quantity', style: 'header'},
+              {text: 'Calories', style: 'header'}
+            ],
+            ['Apple', '100 grams', '52'],
+            ['Bananas', '100 grams', '89'],
+            ['Guava', '100 grams', '68'],
+            ['Lemon', '100 grams', '29'],
+            ['Mangos', '100 grams', '60'],
+            ['Orange', '100 grams', '47'],
+            ['Strawberries', '100 grams', '33']
+          ]
+        }
+      }
+    ],
+    styles: {
+      header: {
+        bold: true,
+        color: '#000',
+        fontSize: 11
+      },
+      demoTable: {
+        color: '#666',
+        fontSize: 10
+      }
+    }
+  };
+
+    pdfMake.createPdf(docDefinition).open();
+  };
+ 
+  $scope.downloadPdf = function() {
+    pdfMake.createPdf(docDefinition).download();
+  };
 
     })
